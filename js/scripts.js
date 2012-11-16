@@ -16,8 +16,13 @@ $(function(){
 		// code is not empty
 		}else{
 			
+			var submitVal = $('#frm-code input[type="submit"]').val();
+			$('#frm-code input[type="submit"]').attr('disabled', 'disabled').val('Validating code...');
+			
 			// ajax call to validate the code
 			$.post('/download/php/codes.php', {code: code}, function(data, status, xhr){
+				
+				$('#frm-code input[type="submit"]').removeAttr('disabled').val(submitVal);
 				
 				// convert the response data to a json object
 				var response = $.parseJSON(data);

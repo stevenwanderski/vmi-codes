@@ -27,7 +27,6 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-	width: 200px;
 	padding: 10px;
 	font-size: 30px;
 	display: block;
